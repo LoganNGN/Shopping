@@ -12,19 +12,19 @@ namespace Shopping
         #region public methods
         public void Add(List<CartItem> cartItems)
         {
-            throw new NotImplementedException();
+            _cartItems.AddRange(cartItems);
         }
 
         public void Remove(List<CartItem> cartItemsToRemove)
         {
-            throw new NotImplementedException();
+            _cartItems.RemoveRange(0, cartItemsToRemove.Count);
         }
 
         public List<CartItem> CartItems
         {
             get
             {
-                throw new NotImplementedException();
+                return _cartItems;
             }
         }
 
@@ -32,7 +32,7 @@ namespace Shopping
         {
             get
             {
-                throw new NotImplementedException();
+                return _cartItems.Count;        
             }
         }
         #endregion public methods
