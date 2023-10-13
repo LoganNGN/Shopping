@@ -150,6 +150,7 @@ namespace TestShopping
             Assert.IsTrue(_cart.DoesExist(999));
         }
 
+        [Test]
         public void Cheapest_UniqueValue_GetArticleId()
         {
             //given
@@ -168,6 +169,7 @@ namespace TestShopping
             Assert.AreEqual(1, _cart.Cheapest());
         }
 
+        [Test]
         public void MostExpensive_UniqueValue_GetArticleId()
         {
             //given
