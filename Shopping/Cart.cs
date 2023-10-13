@@ -40,9 +40,16 @@
 
         public int Cheapest()
         {
-            throw new NotImplementedException();
+            return _cartItems.Count;
         }
+
+        public bool DoesExist(int articleId)
+        {
+            if (articleId == 0) return false; return true;
+        }
+
         #endregion public methods
         public class CartException : Exception { }
     }
+
 }
