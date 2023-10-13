@@ -17,7 +17,7 @@ namespace Shopping
 
         public void Remove(List<CartItem> cartItemsToRemove)
         {
-            _cartItems.RemoveRange(0, cartItemsToRemove.Count);
+            _cartItems.Clear();
         }
 
         public List<CartItem> CartItems
@@ -32,7 +32,7 @@ namespace Shopping
         {
             get
             {
-                return _cartItems.Count;        
+                return Article.Price(_cartItems);     
             }
         }
         #endregion public methods
