@@ -32,7 +32,12 @@ namespace Shopping
         {
             get
             {
-                return Article.Price(_cartItems);     
+                float totalprice = 0f;
+                foreach (var cartItem in _cartItems)
+                {
+                    totalprice += cartItem.Article.Price * cartItem.Quantity;
+                }
+                return totalprice;
             }
         }
         #endregion public methods

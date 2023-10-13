@@ -32,7 +32,7 @@ namespace Shopping
             }
             set
             {
-                if (_quantity != value)
+                if (_quantity <0)
                 {
                     throw new WrongQuantityException();
                 }
