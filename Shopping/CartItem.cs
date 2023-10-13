@@ -18,7 +18,7 @@
         {
             get
             {
-                return this._article;
+                return _article;
             }
         }
 
@@ -26,7 +26,7 @@
         {
             get
             {
-                return this._quantity;
+                return _quantity;
             }
             set
             {

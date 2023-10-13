@@ -45,7 +45,8 @@ namespace Shopping
                     default: 
                         break;
                 }
-                Regex rgx = new Regex("[^A-Za-z0-9 ]");
+                //need to add the space after the 9 else space will be considered as a special character
+                Regex rgx = new Regex("[^A-Za-z0-9 ]"); 
                 bool containsSpecialCharacter = rgx.IsMatch(value);
                 if (containsSpecialCharacter)
                 {
