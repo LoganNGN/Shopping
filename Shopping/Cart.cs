@@ -12,7 +12,7 @@
             _cartItems.AddRange(cartItems);
         }
 
-        public void Remove(List<CartItem> cartItemsToRemove)
+        public void Remove(List<CartItem> cartItemsToRemove = null)
         {
             _cartItems.Clear();
         }
@@ -37,6 +37,12 @@
                 return currentCartPrice;
             }
         }
+
+        public int Cheapest()
+        {
+            throw new NotImplementedException();
+        }
         #endregion public methods
+        public class CartException : Exception { }
     }
 }
