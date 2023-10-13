@@ -1,7 +1,4 @@
-﻿using System;
-using System.Net.Http.Headers;
-
-namespace Shopping
+﻿namespace Shopping
 {
     public class Cart
     {
@@ -32,12 +29,12 @@ namespace Shopping
         {
             get
             {
-                float totalprice = 0f;
-                foreach (var cartItem in _cartItems)
+                float currentCartPrice = 0f;
+                foreach (CartItem cartItem in _cartItems)
                 {
-                    totalprice += cartItem.Article.Price * cartItem.Quantity;
+                    currentCartPrice += cartItem.Article.Price * cartItem.Quantity;
                 }
-                return totalprice;
+                return currentCartPrice;
             }
         }
         #endregion public methods

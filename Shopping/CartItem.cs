@@ -1,6 +1,4 @@
-﻿using System.Net.Http.Headers;
-
-namespace Shopping
+﻿namespace Shopping
 {
     public class CartItem
     {
@@ -16,11 +14,11 @@ namespace Shopping
             _quantity = quantity;
         }
 
-        public Article Article
+        public Article? Article
         {
             get
             {
-                return _article;
+                return this._article;
             }
         }
 
@@ -28,7 +26,7 @@ namespace Shopping
         {
             get
             {
-                return _quantity;
+                return this._quantity;
             }
             set
             {
