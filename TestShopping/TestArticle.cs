@@ -1,4 +1,6 @@
 using Shopping;
+using static Shopping.Article;
+using static Shopping.CartItem;
 
 namespace TestShopping
 {
@@ -34,5 +36,63 @@ namespace TestShopping
             Assert.AreEqual(_description, _article.Description);
             Assert.AreEqual(_price, _article.Price);
         }
+
+        #region Description
+        /*
+         * A article description must meet theses specifications:
+         *  * 2 words minimum
+         *  * No special chars like {!,*,+,/}
+         *  * Max 50 chars (blank spaces count)
+         */
+
+        [Test]
+        public void Description_CorrectDescription_ReturnNewValue()
+        {
+            //given
+            string expectedDescription = "After Shave";
+
+            //when
+            _article.Description = expectedDescription;
+
+            //then
+            Assert.AreEqual(expectedDescription, _article.Description);
+        }
+
+        [Test]
+        public void Description_SingleWordDescription_ThrowException()
+        {
+            //given
+
+            //when
+            Assert.Throws<TooShortDescriptionException>(() => _article.Description = "TooShort");
+
+            //then
+            //throws exception
+        }
+
+        [Test]
+        public void Description_DescriptionContainingSpecialChars_ThrowException()
+        {
+            //given
+
+            //when
+            Assert.Throws<SpecialCharInDescriptionException>(() => _article.Description = "Jacques+Daniel");
+
+            //then
+            //throws exception
+        }
+
+        [Test]
+        public void Description_TooLongDescription_ThrowException()
+        {
+            //given
+
+            //when
+            Assert.Throws<TooLongDescriptionException>(() => _article.Description = "A very very very very very looonnng descriptioooooon");
+
+            //then
+            //throws exception
+        }
+        #endregion Description
     }
 }
